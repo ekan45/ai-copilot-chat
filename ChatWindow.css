@@ -1,0 +1,311 @@
+.chat-window {
+ min-height: 100vh;
+  min-width: 100vw;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, #f0f8ff, #e6e6fa);
+  font-family: 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Header - removed 100vh */
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;            /* Full width */
+}
+
+/* Messages - improved scrolling and sizing */
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 200px;
+  max-height: 60vh;
+  
+}
+
+
+/* Unified message styling */
+.message {
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin: 0;
+  max-width: 80%;
+  word-break: break-word;
+}
+
+.message.user {
+  background-color: #ffffff;
+  align-self: flex-left;
+}
+
+.message.ai {
+   background: linear-gradient(to bottom, #f0f8ff, #e6e6fa);
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: #333;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  max-width: 80%;
+  /* Remove inline-block and use these instead: */
+  display: block; /* Changed from inline-block */
+  width: fit-content; /* Box width matches content */
+  margin-top: 4px; /* Space between sender and message */
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-height: 44px;
+  transition: min-height 0.3s ease;
+}
+
+/* Change this */
+.message.ai.simple-fin-message {
+  background-color: #ffffff !important;
+  border: none !important;
+  box-shadow: none !important;
+  align-self: flex-start;
+  /* Remove any gradient if present */
+  background-image: none !important;
+}
+
+
+/* Message sender with logo */
+.message-sender {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 4px;
+}
+
+
+/* User logo */
+.user-logo {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* AI logo */
+.ai-logo {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #6c757d;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+/* Typing effect - ensure it's visible */
+.typing-text {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* Rest of your CSS remains the same */
+.tabs {
+  display: flex;
+  justify-content: left;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.tab {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #333;
+  padding-bottom: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.tab.active {
+  color: #007bff;
+}
+
+.tab.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #007bff;
+}
+
+.suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  margin-top: 1rem;
+  align-items: flex-start; /* Align to left */
+}
+
+.suggestion {
+  background-color: #f0f0f0;
+  padding: 8px 12px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  /* Changed from width:100% to auto sizing */
+  display: inline-block; /* Box wraps content */
+  white-space: nowrap; /* Prevent line breaks */
+  max-width: 100%; /* Don't overflow container */
+  box-sizing: border-box;
+}
+
+.suggestion:hover {
+  background-color: #e0e0e0;
+}
+
+.input-area {
+  display: flex;
+  padding: 0 1rem 1rem;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input-wrapper textarea {
+  width: 100%;
+  padding: 10px 45px 10px 12px;
+  border: 1.5px solid #007bff;
+  border-radius: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  resize: none;
+  font-size: 1rem;
+  height: 44px;
+  max-height: 120px;
+  line-height: 1.3;
+}
+
+.input-wrapper textarea:focus,
+.input-wrapper textarea:active {
+  border-color: #007bff !important;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+
+.arrow-inside {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-60%);
+  color: rgb(170, 167, 167);
+  border: none;
+  border-radius: 6px;
+  padding: 0 20px;
+  height: 30px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.arrow-inside:hover {
+  background-color: #131415;
+}
+
+.details-section {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  color: #555;
+  margin: 1rem;
+}
+
+@media (max-width: 768px) {
+  .tab {
+    font-size: 0.95rem;
+  }
+
+  .header h2 {
+    font-size: 1.25rem;
+  }
+
+  .header p {
+    font-size: 0.95rem;
+  }
+
+  .suggestion {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+
+  .input-wrapper textarea {
+    font-size: 0.95rem;
+    height: 40px;
+  }
+
+  .arrow-inside {
+    font-size: 1rem;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab {
+    font-size: 0.85rem;
+    margin: 0 4px;
+  }
+
+  .suggestions {
+    gap: 0.3rem;
+  }
+
+  .suggestion {
+    font-size: 0.75rem;
+    padding: 5px 8px;
+  }
+
+  .header h2 {
+    font-size: 1.1rem;
+
+  }
+
+  .header p {
+    font-size: 0.85rem;
+  }
+
+  .arrow-inside {
+    font-size: 0.9rem;
+    padding: 0 8px;
+  }
+
+  .input-area {
+    gap: 0.3rem;
+  }
+}
+
+
