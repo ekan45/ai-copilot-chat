@@ -27,3 +27,8 @@ The chat window allows users to ask questions or choose from suggested prompts. 
 └── ChatWindow.css # Styling for the chat UI
 └── App.js # Main app component
 └── index.js # React entry point
+
+## 🌐 Live Demo
+
+Check out the live version here: [Click to View](aicopilotchat.netlify.app)
+
