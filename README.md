@@ -1,12 +1,29 @@
-# React + Vite
+# AI Copilot Chat Window
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple chat interface built using **React** that simulates an interaction with an AI assistant named **Fin**. It focuses on creating a realistic user experience by including typing animations for the AI and organized chat bubbles for both user and AI messages.
 
-Currently, two official plugins are available:
+## 📌 Project Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The chat window allows users to ask questions or choose from suggested prompts. The AI assistant "Fin" replies with pre-defined responses, making it look like a real-time chat. It's designed with a clean and responsive layout, ideal for showcasing a basic AI assistant frontend.
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 💬 Interactive chat interface
+- ⌨️ Typing animation for AI replies
+- 📄 Suggested prompts for common questions
+- 👤 User and AI messages displayed separately
+- ✅ Clear and easy-to-use UI
+
+## 🔧 Technologies Used
+
+- **React** – for building the component-based user interface
+- **Framer Motion** – to animate the typing effect
+- **CSS** – for styling the chat layout
+- **JavaScript** – to handle message interaction logic
+
+## 📁 File Structure
+/src
+└── ChatWindow.js # Main chat component
+└── ChatWindow.css # Styling for the chat UI
+└── App.js # Main app component
+└── index.js # React entry point
