@@ -19,3 +19,11 @@ The chat window allows users to ask questions or choose from suggested prompts. 
 - **Framer Motion** – to animate the typing effect
 - **CSS** – for styling the chat layout
 - **JavaScript** – to handle message interaction logic
+
+## 📁 File Structure
+
+/src
+└── ChatWindow.js # Main chat component
+└── ChatWindow.css # Styling for the chat UI
+└── App.js # Main app component
+└── index.js # React entry point
